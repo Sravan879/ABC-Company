@@ -1,0 +1,115 @@
+.cms-container {
+     font-family: 'Inter', sans-serif;
+     max-width: 800px;
+     margin: 32px auto; 
+     padding: 0 20px;
+   }
+   
+   .cms-container h2 {
+     color: #333;
+     margin-bottom: 24px; 
+     font-size: 28.8px; 
+   }
+   
+   .cms-card {
+     background: #fff;
+     border-radius: 8px;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+     padding: 24px; 
+   }
+   
+   .cms-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 16px;
+     padding-bottom: 16px; 
+     border-bottom: 1px solid #eee;
+   }
+   
+   .page-label {
+     font-weight: 600;
+     color: #555;
+     font-size: 17.6px; 
+   }
+   
+   .save-indicator {
+     color: #4CAF50;
+     font-size: 14.4px; 
+     font-weight: 500;
+   }
+   
+   .cms-textarea {
+     width: 100%;
+     min-height: 120px;
+     padding: 12.8px; 
+     border: 1px solid #ddd;
+     border-radius: 4px;
+     font-family: inherit;
+     font-size: 16px; 
+     margin-bottom: 24px; 
+     resize: vertical;
+     line-height: 1.5;
+   }
+   
+   .cms-textarea:focus {
+     outline: none;
+     border-color: #fdb33d;
+   }
+   
+   .heading-preview {
+     padding: 16px; 
+     background: #f9f9f9;
+     border-radius: 4px;
+     margin-bottom: 24px; 
+     border-left: 4px solid #fdb33d;
+   }
+   
+   .cms-actions {
+     display: flex;
+     justify-content: flex-end;
+     gap: 16px; 
+   }
+   
+   .cms-btn {
+     padding: 11.2px 20.8px; 
+     border: none;
+     border-radius: 4px;
+     font-weight: 600;
+     cursor: pointer;
+     transition: all 0.2s;
+     font-size: 14.4px; 
+   }
+   
+   .edit-btn {
+     background: #fdb33d;
+     color: white;
+   }
+   
+   .edit-btn:hover {
+     background: #e6a137;
+   }
+   
+   .save-btn {
+     background: #4CAF50;
+     color: white;
+   }
+   
+   .save-btn:hover {
+     background: #3e8e41;
+   }
+   
+   .cancel-btn {
+     background: #f0f0f0;
+     color: #333;
+   }
+   
+   .cancel-btn:hover {
+     background: #e0e0e0;
+   }
+   
+   .save-btn:disabled {
+     background: #cccccc;
+     cursor: not-allowed;
+   }
+   
