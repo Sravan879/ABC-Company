@@ -45,7 +45,7 @@ cd backend/company
 ## 💻 Frontend Setup (React)
 
 ### Requirements
-- Node.js (v18+ recommended)
+- Node.js (v18+)
 - npm
 
 ### Install Dependencies
