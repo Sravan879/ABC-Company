@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 
 @Entity
-@Table(name = "abc_company_db")
+@Table(name = "content")
 public class Heading {
 
     @Id
