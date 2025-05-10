@@ -5,29 +5,43 @@ function CMSPage() {
   const [input, setInput] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/heading/get')
-      .then(res => res.json())
-      .then(data => setInput(data.text));
+    const fetchHeading = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/api/heading/get');
+        if (!response.ok) throw new Error('Failed to fetch heading');
+        const data = await response.json();
+        setInput(data.text || '');
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+    fetchHeading();
   }, []);
 
-  const handleSave = () => {
-    fetch('http://localhost:8080/api/heading/update', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: input })
-    })
-    .then(res => res.json())
-    .then(() => {
+  const handleSave = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/api/heading/update', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: input })
+      });
+      
+      if (!response.ok) throw new Error('Failed to save heading');
+      
       setIsSaved(true);
-      setIsEditing(false);
       setTimeout(() => setIsSaved(false), 2000);
-    });
+      setIsEditing(false);
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
     <div className="cms-container">
+      
       <h2>Content Management System</h2>
       <div className="cms-card">
         <div className="cms-header">
@@ -62,7 +76,7 @@ function CMSPage() {
         ) : (
           <>
             <div className="heading-preview">
-              <h3 style={{ color: '#222' }}>{input}</h3>
+              <h3>{input}</h3>
             </div>
             <div className="cms-actions">
               <button 

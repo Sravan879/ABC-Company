@@ -112,4 +112,17 @@
      background: #cccccc;
      cursor: not-allowed;
    }
+
+.cms-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+.error-message {
+  color: #ff4444;
+  margin-bottom: 1rem;
+}
+
+
    
